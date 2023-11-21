@@ -12,5 +12,6 @@ describe('Test appload', () => {
 		cy.get('input[name="loginId"]') // 이메일 필드 확인
 		cy.get('input[name="password"]') // 비밀번호 필드 확인
 		cy.get('[class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium  e15piai01 css-ydj31v"]') // 비밀번호 보기 버튼
+		cy.get('[class="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover css-q6237f"]').contains('비밀번호를 잊어버리셨나요?') // '비밀번호를 잊어버리셨나요?' 필드 확인
     })
 })
