@@ -1,0 +1,9 @@
+{
+  "name": "elice",
+  "version": "1.0.0",
+  "main": "loginTest.cy.js",
+  "repository": "https://github.com/likecrong/elice",
+  "dependencies": {
+    "cypress": "^13.5.1"
+  }
+}
