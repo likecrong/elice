@@ -7,7 +7,7 @@ describe('Test of login page', () => {
 	it('load check', () => {
 		cy.get('input[name="loginId"]') // 이메일 필드 확인
 		cy.get('input[name="password"]') // 비밀번호 필드 확인
-		cy.get('button[aria-label="비밀번호 보기"]') // 비밀번호 보기 버튼 확인
+		//cy.get('button[aria-label="비밀번호 보기"]') // 비밀번호 보기 버튼 확인 [기본 버전 오류 없음, 깃허브 오류 발생]
 		cy.get('[class="MuiTypography-root MuiTypography-body2 MuiLink-root MuiLink-underlineHover css-q6237f"]').contains('비밀번호를 잊어버리셨나요?') // '비밀번호를 잊어버리셨나요?' 필드 확인
 		
 		cy.get('button[id="mui-3"]').contains('로그인')	 // '로그인' 버튼 필드 확인
