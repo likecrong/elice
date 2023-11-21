@@ -5,11 +5,11 @@ describe('Test appload', () => {
 		
 	//1. 상단 부 로고 확인
 	it('logo check', () => {
-		cy.get('[class="css-1xknvyq e1btkj5w1"]').should('be.visible') 
+		cy.get('[class="css-1xknvyq e1btkj5w1"]').should('be.visible')
+		cy.wait(1000)		
     })
 	//2. 중반 부 확인
 	it('middle check', () => {
-		
 		//2-1. 입력 form 칸
 		cy.get('input[name="loginId"]') // 이메일 필드 확인
 		cy.get('input[name="password"]') // 비밀번호 필드 확인
@@ -34,7 +34,7 @@ describe('Test appload', () => {
 		cy.get('button[aria-label="Google"]').contains('구글로 로그인') // '구글로 로그인' 버튼 확인
 		*/
 		
-		cy.get('button[class="css-1n4x2a0 e1u3bopy0"]').click() // '접기' 버튼 확인 [열기]
+		cy.get('button[class="css-1n4x2a0 e1u3bopy0"]').click() // '더보기' 버튼 확인 [열기]
 		cy.get('button[aria-label="Microsoft"]') //'Microsoft' 버튼 확인
 		cy.get('button[aria-label="Facebook"]') //'Facebook' 버튼 확인
 		cy.get('button[aria-label="Naver"]') //'Naver' 버튼 확인
@@ -43,15 +43,20 @@ describe('Test appload', () => {
 		cy.get('button[aria-label="Whalespace"]') //'Whalespace' 버튼 확인
 		cy.get('button[class="css-1n4x2a0 e1u3bopy0"]').click() // '접기' 버튼 확인 [닫기]
 		
-		//2-4. 회원 가입
+		cy.wait(1000)
+    })
+	//3. 하단부 확인 : 회원가입
+	it('Bottom check', () => {
 		cy.get('[class="css-16k01br e1t19hrb0"]').should('be.visible')
 		/*
 		//git과 연동시 지원하지 않는 코드
 		cy.get('[class="css-16k01br e1t19hrb0"]').contains('아직 계정이 없으신가요?')
 		cy.get('[class="css-16k01br e1t19hrb0"]').contains('회원가입')
 		*/
-		
-		//2-5. footer
+		cy.wait(1000)
+    })
+	//4. footer 확인
+	it('footer', () => {
 		cy.get('[class="sc-10xkpbs-3 sc-q8098a-3 dcmCxF kIYyiB"]').should('be.visible') // 로고 이미지 확인
 		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').should('be.visible')
 		
