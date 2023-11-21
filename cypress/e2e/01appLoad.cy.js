@@ -40,7 +40,8 @@ describe('Test appload', () => {
 		//2-5. footer
 		cy.get('[class="sc-10xkpbs-3 sc-q8098a-3 dcmCxF kIYyiB"]') 
 		// /*elice*/ 로고 이미지 확인
-		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').contains('약관 안내') 
+		//cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').contains('약관 안내')
+		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').to.contain('약관 안내')
 		// '약관 안내' 확인
 		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').contains('개인정보처리방침') 
 		// '개인정보처리방침' 확인
