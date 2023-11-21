@@ -3,7 +3,7 @@ describe('Test loginSuccess', () => {
       cy.visit('https://accounts.elice.io') 
     });
 	
-	//4. login 성공 후, account 설정페이지로 이동
+	//login 성공 후, account 설정페이지로 이동
 	it('login Success', () => {
         cy.get('input[name="loginId"]').type('like.crong@gmail.com')
 		cy.get('input[name="password"]').type('nananono!01')
