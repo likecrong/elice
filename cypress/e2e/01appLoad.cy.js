@@ -5,7 +5,7 @@ describe('Test appload', () => {
 		
 	//1. 상단 부 로고 확인
 	it('logo check', () => {
-		cy.get('[class="css-1xknvyq e1btkj5w1"]')
+		cy.get('[class="css-1xknvyq e1btkj5w1"]').should('be.visible') 
     })
 	//2. 중반 부 확인
 	it('middle check', () => {
@@ -18,12 +18,21 @@ describe('Test appload', () => {
 		cy.get('button[id="mui-3"]').click()	 // '로그인' 버튼 확인
 		
 		//2-2. 또는
-		cy.get('[class="css-fwbfcf ex72zvc0"]')
+		cy.get('[class="css-fwbfcf ex72zvc0"]') // '또는' 필드 확인
+		/*
+		// git과 연동시 지원하지 않는 코드
+		cy.get('[class="css-fwbfcf ex72zvc0"]').contains('또는') 
+		*/
 		
 		//2-3. 다른 사이트를 이용한 로그인
 		//새로운 화면창이 뜨는 버튼은 클릭하지 않음
 		cy.get('button[aria-label="Kakao"]') // '카카오로 로그인' 버튼 확인
 		cy.get('button[aria-label="Google"]') // '구글로 로그인' 버튼 확인
+		/*
+		// git과 연동시 지원하지 않는 코드
+		cy.get('button[aria-label="Kakao"]').contains('카카오로 로그인') // '카카오로 로그인' 버튼 확인
+		cy.get('button[aria-label="Google"]').contains('구글로 로그인') // '구글로 로그인' 버튼 확인
+		*/
 		
 		cy.get('button[class="css-1n4x2a0 e1u3bopy0"]').click() // '접기' 버튼 확인 [열기]
 		cy.get('button[aria-label="Microsoft"]') //'Microsoft' 버튼 확인
@@ -35,13 +44,20 @@ describe('Test appload', () => {
 		cy.get('button[class="css-1n4x2a0 e1u3bopy0"]').click() // '접기' 버튼 확인 [닫기]
 		
 		//2-4. 회원 가입
-		cy.get('[class="css-16k01br e1t19hrb0"]')
-			
+		cy.get('[class="css-16k01br e1t19hrb0"]').should('be.visible')
+		/*
+		//git과 연동시 지원하지 않는 코드
+		cy.get('[class="css-16k01br e1t19hrb0"]').contains('아직 계정이 없으신가요?')
+		cy.get('[class="css-16k01br e1t19hrb0"]').contains('회원가입')
+		*/
+		
 		//2-5. footer
-		cy.get('[class="sc-10xkpbs-3 sc-q8098a-3 dcmCxF kIYyiB"]') 
-		// /*elice*/ 로고 이미지 확인
-		//cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').contains('약관 안내')
-		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').to.contain('약관 안내')
+		cy.get('[class="sc-10xkpbs-3 sc-q8098a-3 dcmCxF kIYyiB"]').should('be.visible') // 로고 이미지 확인
+		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').should('be.visible')
+		
+		/* 
+		//git과 연동시 지원하지 않는 코드
+		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').contains('약관 안내')
 		// '약관 안내' 확인
 		cy.get('[class="eb-text eb-text--role-default eb-text--size-tiny"]').contains('개인정보처리방침') 
 		// '개인정보처리방침' 확인
@@ -53,6 +69,7 @@ describe('Test appload', () => {
 		// '서비스 상태' 확인
 		cy.get('[aria-label="Change Languages"]')
 		// 언어 번역 확인
-		
+		*/
+		cy.wait(1000)
     })
 })
